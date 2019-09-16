@@ -8,6 +8,7 @@
       <h2 class="subtitle">
         My polished Nuxt.js project
       </h2>
+      <p v-if="!isLoggedIn">Log in with depi@mail-maker.net : password</p>
       <h3 v-if="isLoggedIn" class="greetings">Hello, authorized user! Go to your <nuxt-link to="/protected">protected page</nuxt-link>.</h3>
       <div class="links">
         <div v-if="isLoggedIn" v-on:click="triggerNetlifyIdentityAction('logout')" class="button--grey">Logout</div>
