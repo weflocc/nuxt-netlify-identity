@@ -44,7 +44,7 @@ export default {
       location.reload(true);
     },
     triggerNetlifyIdentityAction(action) {
-      if (action == "login") {
+      if (action == "login" || action == "signup") {
         netlifyIdentity.open(action);
         netlifyIdentity.on(action, user => {
           this.setUser(user);
