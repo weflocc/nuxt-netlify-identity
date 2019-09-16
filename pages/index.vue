@@ -9,6 +9,7 @@
         My polished Nuxt.js project
       </h2>
       <p v-if="!isLoggedIn">Log in with depi@mail-maker.net : password</p>
+      <p>You should only be able to view the Protected Page after logging in. You should be redirected back home if you try to go to the Protected Page and you are not logged in.</p>
       <h3 v-if="isLoggedIn" class="greetings">Hello, authorized user! Go to your <nuxt-link to="/protected">protected page</nuxt-link>.</h3>
       <div class="links">
         <div v-if="isLoggedIn" v-on:click="triggerNetlifyIdentityAction('logout')" class="button--grey">Logout</div>
