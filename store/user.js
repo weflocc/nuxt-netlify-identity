@@ -1,17 +1,15 @@
+import netlifyIdentity from "netlify-identity-widget";
+
+netlifyIdentity.init();
+const currentUser = netlifyIdentity.currentUser();
+
 export const state = () => ({
-  currentUser: window.localStorage.getItem('user')
+  currentUser: currentUser
 });
 
 export const mutations = {
   SET_USER(state, currentUser) {
-    if (!currentUser) {
-      state.currentUser = null;
-      window.localStorage.removeItem('user');
-      return;
-    }
-    let theUser = JSON.stringify(currentUser);
     state.currentUser = currentUser;
-    window.localStorage.setItem('user', theUser);
   }
 };
 
