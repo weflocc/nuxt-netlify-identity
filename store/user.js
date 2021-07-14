@@ -1,7 +1,9 @@
 import netlifyIdentity from "netlify-identity-widget";
+if (process.browser) {
+  netlifyIdentity.init();
+}
 
-netlifyIdentity.init();
-const currentUser = netlifyIdentity.currentUser();
+const currentUser = netlifyIdentity?.currentUser() || null;
 
 export const state = () => ({
   currentUser: currentUser

@@ -28,7 +28,9 @@ import Logo from '~/components/Logo.vue'
 import netlifyIdentity from "netlify-identity-widget";
 import { mapActions, mapState } from "vuex";
 
-netlifyIdentity.init();
+if (process.browser) {
+  netlifyIdentity.init();
+}
 
 export default {
   components: {
